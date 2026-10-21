@@ -1,0 +1,4 @@
+design,B,rho_median,rho_p05,rho_min,frontier_five_mean_retained_pct
+independent_pm10,2000,0.984,0.959,0.891,76.6
+independent_pm20,2000,0.949,0.884,0.777,63.6
+common_pm10,2000,1.0,1.0,1.0,100.0

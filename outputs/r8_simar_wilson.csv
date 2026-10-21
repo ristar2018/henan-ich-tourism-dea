@@ -1,0 +1,10 @@
+model,term,beta_ols,boot_ci_low,boot_ci_high,ci_contains_zero,n_bootstrap
+A,z1,0.097,-0.126,0.26,True,1000
+A,z2,-0.065,-0.32,0.162,True,1000
+A,z3,0.115,-0.135,0.317,True,1000
+B,z1,0.169,-0.037,0.236,True,1000
+B,z2,-0.151,-0.246,0.031,True,1000
+C_levels,z1,0.092,-0.099,0.206,True,1000
+C_levels,z2,-0.008,-0.183,0.11,True,1000
+C_density,z1,-0.111,-0.181,0.071,True,1000
+C_density,z2,0.07,-0.114,0.133,True,1000

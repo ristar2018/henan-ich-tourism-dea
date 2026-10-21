@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "Please cite both the manuscript and the archived dataset."
+title: "Replication code: Cultural Heritage and Tourism Efficiency in 18 Municipalities of Henan, China (2024)"
+type: software
+authors:
+  # Author names are withheld in this copy to preserve double-blind review.
+  # After acceptance, replace with the full author list, affiliations and ORCIDs.
+  - name: "The Authors"
+    # affiliation: "..."
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+version: 1.0.0
+date-released: 2026-10-18
+licenses:
+  - MIT
+# Repository and dataset identifiers are added after acceptance.
+# repository-code: "https://github.com/<org>/henan-ich-tourism-dea"
+# url: "https://github.com/<org>/henan-ich-tourism-dea"
+# identifiers:
+#   - type: doi
+#     value: 10.5281/zenodo.RESERVED_DATA_DOI
+#   - type: doi
+#     value: 10.xxxx/MANUSCRIPT_DOI
+keywords:
+  - data envelopment analysis
+  - slacks-based measure
+  - intangible cultural heritage
+  - cultural tourism
+  - GeoDetector
+  - Henan
+  - China

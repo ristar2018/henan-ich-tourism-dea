@@ -1,0 +1,4 @@
+statistic,weights,Moran_I,permutation_p
+Global univariate ICH density,Queen,-0.075,0.488
+Global univariate ICH density,KNN k=4,0.054,0.16
+Bivariate ICH vs village density,Queen,0.069,0.298

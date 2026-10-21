@@ -1,0 +1,78 @@
+DATA USE STATEMENT
+==================
+Project: From Heritage Resources to Tourism Outcomes — Spatial Efficiency
+Analysis of Intangible Cultural Heritage–Tourism Conversion in Henan
+Province, China.
+Study year: 2024 (cross-section); units: 18 prefecture-level divisions of
+Henan Province.
+
+1. WHAT IS RELEASED
+-------------------
+Only municipality-level aggregates for 18 administrative units are released:
+  - counts of national- and provincial-list intangible cultural heritage (ICH)
+    items, provincial representative inheritors, traditional villages and
+    national key cultural-relic protection units;
+  - municipality-level economic, demographic and geographic variables
+    (GDP, permanent population, urbanization rate, tertiary-sector share,
+    mean elevation, administrative area);
+  - total tourism revenue and the official end-2024 count of all-grade
+    A-level scenic areas, with a city-by-city source register;
+  - derived composite/density indices and the efficiency results produced by
+    the released scripts.
+All point-level or individual-level information has been aggregated to the
+municipal level.
+
+2. WHAT IS NOT RELEASED AND WHY
+-------------------------------
+  - Individual ICH item coordinates and site names, inheritor-level data and
+    the raw IhChina point vector file. The point records are a licensed
+    third-party academic product (IhChina 2006-2021) whose redistribution is
+    restricted by the vendor licence, and site-level coordinates could
+    re-identify individual heritage resources. Researchers who hold the
+    appropriate licence can reconstruct the released municipal counts by the
+    spatial-join procedure documented in spatial_reconstruction/README.md.
+  - Administrative boundary polygons and the raw elevation raster. These are
+    third-party/official products and are not redistributed; only the
+    municipality-level area and zonal-mean elevation derived from them are
+    released.
+
+3. SOURCES OF THE RELEASED STATISTICS
+-------------------------------------
+  - Municipal 2024 national economic and social development statistical
+    communiques and the corresponding statistical yearbooks (GDP, population,
+    urbanization, tourism revenue where published).
+  - Municipal culture-and-tourism authority releases and graded scenic-area
+    rosters (A-level scenic areas). Four municipalities (Kaifeng, Anyang,
+    Xinxiang and Sanmenxia) publish only a grade subtotal or a related-year
+    figure in their communique; their all-grade total is taken from the
+    municipal authority. Zhengzhou's end-2024 count is taken from the
+    municipal government's 2025 official release. All 18 A-level figures are
+    official; none is estimated by the authors.
+  - National and provincial ICH lists, the Chinese traditional-village lists
+    and national key cultural-relic protection unit lists (publicly
+    announced counts).
+  - A public digital-elevation model (SRTM/CASEarth family) for mean
+    elevation.
+Where a 2024 figure was not directly reported, adjacent-year official values
+were used under documented reconstruction rules; the affected cells are
+flagged in the status columns and listed in Supplementary Table S3 of the
+manuscript and in docs/data_dictionary.md.
+
+4. PERMISSION AND LICENCE
+-------------------------
+The released municipality-level data are made available under the Creative
+Commons Attribution 4.0 International licence (CC BY 4.0); see
+DATA_LICENSE.txt. You may share and adapt the released aggregates provided
+that you give appropriate credit, cite the associated manuscript and this
+archive, and indicate any changes. This licence applies only to the released
+aggregate files; it does not extend to the underlying third-party products
+(IhChina, official boundary products, DEM rasters), which remain governed by
+their own terms and must be obtained independently.
+
+5. ACCURACY AND USE
+-------------------
+The data are provided for academic research and teaching, in the form
+verified during manuscript revision. Reconstructed/back-cast cells are
+explicitly flagged and their sensitivity is assessed in the manuscript and in
+scripts r7 (revenue perturbation) and r8 (Simar–Wilson bootstrap). No
+warranty is made for decisions taken outside this research context.

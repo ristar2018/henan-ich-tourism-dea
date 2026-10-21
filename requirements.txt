@@ -1,0 +1,13 @@
+# Core pipeline (r0-r5, r7-r8): only these four packages are required.
+numpy>=1.24
+pandas>=1.5
+scipy>=1.10
+statsmodels>=0.13
+
+# Optional - only for src/r6_spatial_statistics.py, which recomputes the
+# nearest-neighbour index and global/bivariate Moran's I from restricted
+# spatial inputs placed under ../spatial_inputs (see README). Not needed for
+# run_all.py; r6 is run manually.
+# geopandas>=0.13
+# libpysal>=4.7
+# esda>=2.5

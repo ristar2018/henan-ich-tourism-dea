@@ -1,0 +1,16 @@
+pair,method,q,p_perm,n_strata,n_singleton_strata
+Her_x_Pop,quantile,0.993,0.008,14,11
+Her_x_Pop,equal,0.403,0.394,8,5
+Her_x_Pop,natural,0.563,0.429,10,7
+Her_x_GDP,quantile,0.951,0.017,12,7
+Her_x_GDP,equal,0.232,0.475,6,3
+Her_x_GDP,natural,0.645,0.277,9,5
+Her_x_Tertiary,quantile,0.842,0.613,15,12
+Her_x_Tertiary,equal,0.309,0.554,8,5
+Her_x_Tertiary,natural,0.305,0.557,8,5
+Her_x_Elev,quantile,0.84,0.455,14,10
+Her_x_Elev,equal,0.243,0.588,7,4
+Her_x_Elev,natural,0.333,0.683,9,5
+Her_x_Urban,quantile,0.579,0.686,13,9
+Her_x_Urban,equal,0.755,0.074,8,5
+Her_x_Urban,natural,0.589,0.404,10,6
