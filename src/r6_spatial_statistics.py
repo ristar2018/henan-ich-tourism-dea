@@ -14,7 +14,8 @@ Data needed (RESTRICTED THIRD-PARTY LAYERS, NOT redistributed in this archive):
   - national ICH point table with coordinates  -> any *.dbf carrying X/Y and a
     ProvinceCN field (the IhChina_2006-2021 product);
   - Henan municipality boundary polygon shapefile (18 features);
-  - the 274 Chinese Traditional Villages register CSV (columns 所属地区/村落名称).
+  - the 274-row Chinese Traditional Villages register CSV (its headers are
+    Chinese: prefecture name / village name).
 Set the folder holding these via SPATIAL_INPUT_DIR (default ../spatial_inputs),
 following spatial_reconstruction/README.md. If any are missing this script
 writes r6_spatial_status.csv describing what is absent and exits 0, so the core
@@ -42,6 +43,9 @@ SPAT = os.environ.get("SPATIAL_INPUT_DIR",
 N_PERM = 9999
 SEED = 20261017
 
+# Chinese (official) names of the 18 Henan municipalities, used to map the
+# Chinese attribute names in the boundary shapefile to the English names
+# used throughout data/ and outputs/.
 CN = ["郑州", "开封", "洛阳", "平顶山", "安阳", "鹤壁", "新乡", "焦作",
       "濮阳", "许昌", "漯河", "三门峡", "南阳", "商丘", "信阳", "周口",
       "驻马店", "济源"]
@@ -113,6 +117,8 @@ def nni(coords_xy, area_m2):
 
 def main():
     os.makedirs(OUT, exist_ok=True)
+    # The restricted source archives carry partly Chinese file names, so each
+    # matcher below tests the Chinese and the English marker side by side.
     dbf = find_file(lambda fn, r: fn.lower() == "ihchina_2006-2021.dbf")
     shp = find_file(lambda fn, r: fn.lower().endswith(".shp") and
                     ("行政" in fn or "市" in fn or "city" in fn.lower()))
@@ -136,6 +142,7 @@ def main():
     # ---- NNI on projected points ----
     pts = []
     for r in read_dbf(dbf):
+        # Province filter: the DBF stores the province name in Chinese.
         if "河南" in r.get("ProvinceCN", ""):
             try:
                 pts.append((float(r["X"]), float(r["Y"])))
@@ -160,8 +167,10 @@ def main():
     # compression at this latitude) and hence the k=4 statistic. Queen contiguity
     # is unaffected by projection. ----
     city = gpd.read_file(shp)
+    # Candidate name columns; the boundary file carries Chinese headers.
     namecol = next((c for c in ["name", "NAME", "市名", "城市", "city"]
                     if c in city.columns), city.columns[0])
+    # Drop the Chinese municipality suffix before mapping to English names.
     city["_base"] = city[namecol].astype(str).str.replace("市", "", regex=False)
     city["_en"] = city["_base"].map(CN2EN)
     if city["_en"].isna().any():
